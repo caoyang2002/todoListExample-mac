@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D0D90F882DD58C93006F2EF6 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D0D90F872DD58C8D006F2EF6 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		D0D90F4D2DD57385006F2EF6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		D0D90F3C2DD57383006F2EF6 /* TodoListExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoListExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D90F4C2DD57385006F2EF6 /* TodoListExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoListExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D90F562DD57385006F2EF6 /* TodoListExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoListExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0D90F872DD58C8D006F2EF6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -79,6 +84,7 @@
 				D0D90F4F2DD57385006F2EF6 /* TodoListExampleTests */,
 				D0D90F592DD57385006F2EF6 /* TodoListExampleUITests */,
 				D0D90F3D2DD57383006F2EF6 /* Products */,
+				D0D90F872DD58C8D006F2EF6 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D90F882DD58C93006F2EF6 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
