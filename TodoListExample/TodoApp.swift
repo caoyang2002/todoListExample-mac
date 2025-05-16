@@ -1,21 +1,25 @@
 import SwiftUI
 import SwiftData
+import OSLog
 
 @main
 struct TodoApp: App {
-    // 使用 AppStorage 来跟踪登录状态
     @AppStorage("currentUser") private var currentUser: String?
-    
+
     var body: some Scene {
         WindowGroup {
-            // 基于 AppStorage 值动态切换视图
             if currentUser != nil {
                 TodoListView()
+                    .onAppear {
+                        Logger.app.info("已启动待办事项列表，当前用户: \(currentUser ?? "", privacy: .private)")
+                    }
             } else {
                 LoginView()
+                    .onAppear {
+                        Logger.app.info("已启动登录界面，未登录状态")
+                    }
             }
         }
-        // 添加 SwiftData 模型容器配置
         .modelContainer(for: [Todo.self, User.self])
     }
 }

@@ -16,7 +16,7 @@ struct LoginView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                Text("Todo 应用")
+                Text("Todo 案例")
                     .font(.largeTitle)
                     .padding(.top, 50)
                 

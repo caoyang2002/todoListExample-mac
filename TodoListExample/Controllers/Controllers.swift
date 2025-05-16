@@ -1,5 +1,6 @@
 import Foundation
 import SwiftData
+import OSLog
 
 // UserController - 处理用户相关的业务逻辑
 class UserController {
@@ -17,6 +18,7 @@ class UserController {
             
             if users.isEmpty {
                 // 用户不存在，创建新用户
+                Logger.views.debug("用户不存在，创建新用户")
                 let newUser = User(username: username, password: password)
                 modelContext.insert(newUser)
                 // 保存当前用户到 UserDefaults
@@ -35,6 +37,7 @@ class UserController {
     
     // 用户登出
     static func logout() {
+        Logger.app.debug("用户登出")
         UserDefaults.standard.removeObject(forKey: "currentUser")
     }
     
