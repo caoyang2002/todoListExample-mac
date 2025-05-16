@@ -62,17 +62,26 @@ struct TodoListView: View {
                 
                 // 添加新 Todo 的输入区域
                 HStack {
-                    TextField("添加新任务", text: $newTodoTitle)
-                        .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(8)
                     
+                    TextField("添加新任务", text: $newTodoTitle)
+//                        .padding()
+//                        .background(Color.gray.opacity(0.2)) // 使用系统灰色背景
+                        .cornerRadius(4)
+                        .font(.system(size: 16))  // 设置字体大小
+                        .foregroundColor(.primary)  // 设置文字颜色
+                        .accentColor(.blue)  // 设置光标和选中文本的颜色
+                        .shadow(color: .gray.opacity(0.3), radius: 3, x: 2, y: 4)  // 添加阴影效果
+                        .overlay(  // 添加边框
+                            RoundedRectangle(cornerRadius: 4)
+                                .stroke(Color.blue, lineWidth: 1)
+                        )
+
                     Button(action: {
                         addTodo()
                     }) {
                         Image(systemName: "plus.circle.fill")
                             .font(.title)
-                            .foregroundColor(.blue)
+                            .foregroundColor(newTodoTitle.isEmpty ? .gray : .blue)
                     }
                     .disabled(newTodoTitle.isEmpty)
                 }

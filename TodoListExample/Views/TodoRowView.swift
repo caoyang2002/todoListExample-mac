@@ -2,6 +2,7 @@ import SwiftUI
 
 // TodoRowView - 单个 Todo 项的行视图
 struct TodoRowView: View {
+    @Environment(\.modelContext) private var modelContext
     // 接收 Todo 模型
     let todo: Todo
     
@@ -21,6 +22,15 @@ struct TodoRowView: View {
                 .foregroundColor(todo.isCompleted ? .gray : .primary)
             
             Spacer()
+//            Divider()
+            
+            // 删除
+            Button(action: {
+                TodoController.deleteTodo(todo: todo, modelContext: modelContext)
+            }) {
+                Image(systemName: "trash")
+                    .foregroundColor(.red)
+            }
             
             // 显示创建时间
             Text(formatDate(todo.createdAt))
@@ -40,7 +50,7 @@ struct TodoRowView: View {
 }
 
 // 这个预览需要手动配置，初学者可以先忽略
-// #Preview {
-//     TodoRowView(todo: Todo(title: "示例任务", username: "test"))
-//         .modelContainer(for: [Todo.self], inMemory: true)
-// }
+ #Preview {
+     TodoRowView(todo: Todo(title: "示例任务", username: "test"))
+         .modelContainer(for: [Todo.self], inMemory: true)
+ }
